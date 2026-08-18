@@ -1,0 +1,19 @@
+POST http://localhost:5000/api/apartments/add
+Content-Type: application/json
+
+{
+  "title": "سكن الطالبات بالقرب من جامعة جنوب الوادي",
+  "governorate": "قنا",
+  "region": "المساكن، بجوار الجامعة",
+  "gender": "إناث",
+  "pricePerBed": 600,
+  "totalBeds": 6,
+  "availableBeds": 4,
+  "rooms": 3,
+  "bathrooms": 2,
+  "description": "شقة مكيفة ومجهزة بالكامل للطلب المغتربين، قريبة جداً من المواصلات والخدمات."
+}
+
+
+###
+GET http://localhost:5000/api/apartments/all
