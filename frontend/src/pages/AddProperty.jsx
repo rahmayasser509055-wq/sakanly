@@ -63,7 +63,7 @@ const AddProperty = () => {
     });
 
     try {
-      const response = await fetch('http://localhost:5000/api/apartments', {
+      const response = await fetch('[https://sakanly-production.up.railway.app](https://sakanly-production.up.railway.app)/api/apartments', {
         method: 'POST',
         body: data,
       });

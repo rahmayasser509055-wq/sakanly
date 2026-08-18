@@ -36,7 +36,7 @@ const Register = () => {
     const checkNationalId = async () => {
       if (formData.nationalId && formData.nationalId.length === 14) {
         try {
-          const response = await fetch('http://localhost:5000/api/auth/check-national-id', {
+          const response = await fetch('[https://sakanly-production.up.railway.app](https://sakanly-production.up.railway.app)/api/auth/check-national-id', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ nationalId: formData.nationalId }),
@@ -81,7 +81,7 @@ const Register = () => {
         email: formData.email.toLowerCase().trim()
       };
 
-      const response = await fetch('http://localhost:5000/api/auth/register', {
+      const response = await fetch('[https://sakanly-production.up.railway.app](https://sakanly-production.up.railway.app)/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(submissionData),

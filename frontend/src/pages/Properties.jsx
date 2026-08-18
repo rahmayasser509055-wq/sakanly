@@ -26,7 +26,7 @@ const Properties = () => {
 
   // دالة جلب السكنات من الباك إند مع معالجة الصور بشكل صحيح
   const fetchApartments = () => {
-    fetch('http://localhost:5000/api/apartments')
+    fetch('[https://sakanly-production.up.railway.app](https://sakanly-production.up.railway.app)/api/apartments')
       .then((res) => res.json())
       .then((data) => {
         // تنسيق البيانات ومعالجة الصور لضمان ظهور صور المالك الحقيقية
@@ -36,11 +36,11 @@ const Properties = () => {
           if (item.images && Array.isArray(item.images) && item.images.length > 0) {
             imageUrl = item.images[0].startsWith('http') 
               ? item.images[0] 
-              : `http://localhost:5000${item.images[0]}`;
+              : `[https://sakanly-production.up.railway.app](https://sakanly-production.up.railway.app)${item.images[0]}`;
           } else if (item.image && typeof item.image === 'string' && item.image.trim() !== '') {
             imageUrl = item.image.startsWith('http') 
               ? item.image 
-              : `http://localhost:5000${item.image}`;
+              : `[https://sakanly-production.up.railway.app](https://sakanly-production.up.railway.app)${item.image}`;
           }
 
           return {
@@ -65,7 +65,7 @@ const Properties = () => {
   // دالة حذف السكن
   const handleDelete = (id) => {
     if (window.confirm('هل أنت متأكد من رغبتك في حذف هذا السكن نهائياً؟')) {
-      fetch(`http://localhost:5000/api/apartments/${id}`, {
+      fetch(`[https://sakanly-production.up.railway.app](https://sakanly-production.up.railway.app)/api/apartments/${id}`, {
         method: 'DELETE',
       })
         .then((res) => res.json())

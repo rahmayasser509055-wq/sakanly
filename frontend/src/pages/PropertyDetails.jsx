@@ -9,20 +9,20 @@ function PropertyDetails() {
   const defaultImage = "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80";
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/apartments/${id}`)
+    fetch(`[https://sakanly-production.up.railway.app](https://sakanly-production.up.railway.app)/api/apartments/${id}`)
       .then((res) => res.json())
       .then((data) => {
         let imageUrl = defaultImage;
         if (data.images && Array.isArray(data.images) && data.images.length > 0) {
-          imageUrl = data.images[0].startsWith('http') ? data.images[0] : `http://localhost:5000${data.images[0]}`;
+          imageUrl = data.images[0].startsWith('http') ? data.images[0] : `[https://sakanly-production.up.railway.app](https://sakanly-production.up.railway.app)${data.images[0]}`;
         } else if (data.image && typeof data.image === 'string' && data.image.trim() !== '') {
-          imageUrl = data.image.startsWith('http') ? data.image : `http://localhost:5000${data.image}`;
+          imageUrl = data.image.startsWith('http') ? data.image : `[https://sakanly-production.up.railway.app](https://sakanly-production.up.railway.app)${data.image}`;
         }
 
         setProperty({
           ...data,
           displayImage: imageUrl,
-          imagesList: data.images && data.images.length > 0 ? data.images.map(img => img.startsWith('http') ? img : `http://localhost:5000${img}`) : [imageUrl]
+          imagesList: data.images && data.images.length > 0 ? data.images.map(img => img.startsWith('http') ? img : `[https://sakanly-production.up.railway.app](https://sakanly-production.up.railway.app)${img}`) : [imageUrl]
         });
         setLoading(false);
       })

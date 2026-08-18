@@ -1,4 +1,4 @@
-POST http://localhost:5000/api/apartments/add
+POST [https://sakanly-production.up.railway.app](https://sakanly-production.up.railway.app)/api/apartments/add
 Content-Type: application/json
 
 {
@@ -16,4 +16,4 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:5000/api/apartments/all
+GET [https://sakanly-production.up.railway.app](https://sakanly-production.up.railway.app)/api/apartments/all

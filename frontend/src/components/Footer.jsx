@@ -26,7 +26,7 @@ function Footer() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/properties');
+        const res = await fetch('[https://sakanly-production.up.railway.app](https://sakanly-production.up.railway.app)/api/properties');
         if (res.ok) {
           const properties = await res.json();
           if (properties && properties.length > 0) {
